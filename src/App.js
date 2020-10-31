@@ -24,6 +24,7 @@ function App() {
           const newList = addToDo(inputValue);
           setToDo(newList);
         }}
+        onchange={(document.querySelector("#inputField").value = "")}
       />
       {toDoList && (
         <OutputFieldList toDoList={toDoList} onRemove={handleRemove} />
