@@ -1,0 +1,20 @@
+.toDoContainer {
+  grid-row-start: 1;
+  grid-column-start: 1;
+  display: flex;
+  width: 150px;
+  height: 20px;
+  margin-bottom: 0.5rem;
+}
+
+.toDoContainer > * {
+  /* display: flex;
+  flex-flow: row wrap;
+  align-content: stretch; */
+}
+
+.removeButton {
+  border-radius: 10px;
+  border: none;
+  padding: 5px;
+}

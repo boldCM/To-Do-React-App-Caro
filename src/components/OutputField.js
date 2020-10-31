@@ -6,7 +6,7 @@ import removeToDo from "../utils/remove";
 
 export default function OutputField({ todo, onRemove }) {
   return (
-    <div>
+    <div className="toDoContainer">
       <input
         type="checkbox"
         name="nameToDo"
@@ -16,9 +16,15 @@ export default function OutputField({ todo, onRemove }) {
         }}
       />
       <label htmlFor="nameToDo">{todo}</label>
-      <button onClick={() =>  {
-        removeToDo(todo);
-        onRemove(todo)}}>remove</button>
+      <button
+        className="removeButton"
+        onClick={() => {
+          removeToDo(todo);
+          onRemove(todo);
+        }}
+      >
+        remove
+      </button>
     </div>
   );
 }

@@ -1,0 +1,20 @@
+.inputForm {
+  display: inline-grid;
+  /* grid-area: 3/0/1/4; */
+  /* grid-row-start: 0; */
+  grid-column-start: 3;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputForm > * {
+  border-radius: 10px;
+  border: none;
+}
+.inputField {
+  margin-top: 30px;
+  padding: 5px;
+}
+.inputButton {
+  padding: 5px;
+}
