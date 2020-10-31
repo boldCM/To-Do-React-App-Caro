@@ -5,11 +5,14 @@ import OutputFieldList from "./components/OutputFieldList";
 import addToDo from "./utils/storage";
 
 function App() {
-  const defaultList = JSON.parse(localStorage.getItem("todo")) || [
-    "Nix zu tun",
-  ];
+  const defaultList = JSON.parse(localStorage.getItem("todo")) || [];
 
   const [toDoList, setToDo] = useState(defaultList);
+
+  function handleRemove(todo) {
+    const newList = toDoList.filter((item) => item !== todo);
+    setToDo(newList);
+  }
 
   return (
     <main>
@@ -21,8 +24,11 @@ function App() {
           const newList = addToDo(inputValue);
           setToDo(newList);
         }}
+        onchange={(document.querySelector("#inputField").value = "")}
       />
-      {toDoList && <OutputFieldList toDoList={toDoList} />}
+      {toDoList && (
+        <OutputFieldList toDoList={toDoList} onRemove={handleRemove} />
+      )}
     </main>
   );
 }
