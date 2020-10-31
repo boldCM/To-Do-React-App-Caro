@@ -15,7 +15,7 @@ function App() {
   }
 
   return (
-    <main>
+    <main className="main">
       <InputField
         onSubmit={(event) => {
           event.preventDefault();
@@ -24,7 +24,7 @@ function App() {
           const newList = addToDo(inputValue);
           setToDo(newList);
         }}
-        onchange={(document.querySelector("#inputField").value = "")}
+        // onchange={(document.querySelector("#inputField").value = "")}
       />
       {toDoList && (
         <OutputFieldList toDoList={toDoList} onRemove={handleRemove} />
